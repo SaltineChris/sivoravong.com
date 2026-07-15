@@ -1,0 +1,351 @@
+/* CSS Reset and Variables */
+:root {
+  /* Brand Guidelines Option 1 - Premium Heritage Identity */
+  --mulberry-green: #223D33;
+  --burnished-gold: #B8860B;
+  --warm-parchment: #F5EEDC;
+  --charcoal-grey: #36454F;
+
+  /* Premium UI Enhancements */
+  --mulberry-green-dark: #12211b;
+  --mulberry-green-light: #2d5245;
+  --burnished-gold-hover: #c9930f;
+  --burnished-gold-light: rgba(184, 134, 11, 0.15);
+  --parchment-border: rgba(184, 134, 11, 0.25);
+  --shadow-color: rgba(18, 33, 27, 0.35);
+  
+  /* Fonts */
+  --font-display: 'Lora', serif;
+  --font-functional: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--mulberry-green);
+  /* Premium radial gradient overlay for depth */
+  background-image: radial-gradient(circle at center, var(--mulberry-green-light) 0%, var(--mulberry-green-dark) 100%);
+  font-family: var(--font-functional);
+  color: var(--warm-parchment);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Base Landing Container Layout */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+}
+
+/* Monogram Seal Header */
+.brand-header {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: monogramEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.monogram-seal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Soft gold glow behind the monogram */
+.monogram-seal-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: var(--burnished-gold);
+  filter: blur(25px);
+  opacity: 0.15;
+  z-index: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.monogram-seal-wrapper:hover::before {
+  transform: scale(1.3);
+  opacity: 0.35;
+}
+
+.brand-monogram {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.monogram-seal-wrapper:hover .brand-monogram {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(184, 134, 11, 0.65));
+}
+
+/* Warm Parchment Content Card */
+.content-card {
+  background-color: var(--warm-parchment);
+  border: 1px solid var(--burnished-gold);
+  border-radius: 4px;
+  box-shadow: 0 25px 50px -12px var(--shadow-color);
+  max-width: 520px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  position: relative;
+}
+
+/* Card inner border for classic letterpress/stationery appearance */
+.card-inner {
+  border: 1px dashed var(--parchment-border);
+  margin: 12px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Typography styles */
+.welcome-heading {
+  font-family: var(--font-display);
+  color: var(--mulberry-green);
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.welcome-message {
+  font-family: var(--font-functional);
+  color: var(--charcoal-grey);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 2.25rem;
+}
+
+/* Contact CTA CSS */
+.contact-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.email-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(34, 61, 51, 0.04);
+  border: 1px solid rgba(34, 61, 51, 0.12);
+  border-radius: 50px;
+  padding: 6px 6px 6px 20px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 100%;
+}
+
+.email-container:hover {
+  border-color: var(--burnished-gold);
+  background-color: rgba(184, 134, 11, 0.04);
+  box-shadow: 0 8px 20px rgba(34, 61, 51, 0.08);
+  transform: translateY(-2px);
+}
+
+.email-link {
+  font-family: var(--font-functional);
+  color: var(--mulberry-green);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.05rem;
+  margin-right: 16px;
+  transition: color 0.3s ease;
+  letter-spacing: 0.2px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.email-link:focus-visible {
+  outline: 2px solid var(--burnished-gold);
+  outline-offset: 4px;
+}
+
+.email-link:hover {
+  color: var(--burnished-gold);
+}
+
+/* Action button for Copying */
+.copy-btn {
+  background-color: var(--mulberry-green);
+  color: var(--warm-parchment);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.copy-btn:focus-visible {
+  outline: 2px solid var(--burnished-gold);
+  outline-offset: 2px;
+}
+
+.copy-btn:hover {
+  background-color: var(--burnished-gold);
+  transform: scale(1.08);
+}
+
+.copy-btn:active {
+  transform: scale(0.92);
+}
+
+.copy-icon {
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+/* Tooltip styles */
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: 135%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background-color: var(--charcoal-grey);
+  color: var(--warm-parchment);
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: var(--font-functional);
+  z-index: 10;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--charcoal-grey) transparent transparent transparent;
+}
+
+/* Show tooltip on hover/focus */
+.copy-btn:hover .tooltip-text,
+.copy-btn:focus-visible .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Active State for copy interaction (triggered by JavaScript) */
+.copy-btn.copied {
+  background-color: #2e624c; /* subtle success green accentuating the mulberry palette */
+  color: var(--warm-parchment);
+}
+
+.copy-btn.copied .copy-icon {
+  transform: scale(0.85);
+}
+
+/* Footer Section */
+.brand-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(245, 238, 220, 0.4); /* warm parchment with lower opacity */
+  opacity: 0;
+  animation: footerEntrance 1.5s ease-out 0.6s forwards;
+}
+
+/* Keyframe Animations */
+@keyframes monogramEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footerEntrance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .landing-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .card-inner {
+    padding: 2.25rem 1.5rem;
+    margin: 8px;
+  }
+  
+  .welcome-heading {
+    font-size: 1.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-message {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .email-container {
+    padding: 6px 6px 6px 14px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .email-link {
+    font-size: 0.95rem;
+    margin-right: 8px;
+  }
+}

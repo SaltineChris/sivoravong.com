@@ -1,0 +1,9 @@
+# Exclude brand guidelines as requested
+CCS_Brand_Guidelines_Option1.md
+
+# OS/IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.gemini/

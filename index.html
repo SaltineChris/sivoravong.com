@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sivoravong — Contact</title>
+  <meta name="description" content="Welcome to sivoravong.com. Get in touch with me at charchris@sivoravong.com.">
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta property="og:title" content="Sivoravong — Contact">
+  <meta property="og:description" content="Welcome to sivoravong.com. Get in touch with me at charchris@sivoravong.com.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sivoravong.com">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Lora & Roboto Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="landing-container">
+    <!-- Premium Monogram Header (on Mulberry Green background) -->
+    <header class="brand-header" id="brandHeader">
+      <div class="monogram-seal-wrapper">
+        <svg class="brand-monogram" viewBox="0 0 100 100" width="90" height="90" xmlns="http://www.w3.org/2000/svg" aria-label="CCS Logo">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="var(--burnished-gold)" stroke-width="1.5" />
+          <circle cx="50" cy="50" r="41" fill="none" stroke="var(--burnished-gold)" stroke-width="0.75" stroke-dasharray="3 2" />
+          <text x="50" y="58" font-family="'Lora', serif" font-size="26" font-weight="600" fill="var(--burnished-gold)" text-anchor="middle" letter-spacing="1">CCS</text>
+        </svg>
+      </div>
+    </header>
+
+    <!-- Warm Parchment Hero Card -->
+    <main class="content-card" id="mainCard">
+      <div class="card-inner">
+        <h1 class="welcome-heading">Welcome</h1>
+        <p class="welcome-message">
+          Hi, I see you've found my domain. You can contact me directly using the link below:
+        </p>
+        
+        <!-- Contact CTA Container -->
+        <div class="contact-section">
+          <div class="email-container" id="emailContainer">
+            <a href="mailto:charchris@sivoravong.com" class="email-link" id="emailLink" aria-label="Send email to charchris@sivoravong.com">
+              charchris@sivoravong.com
+            </a>
+            <button class="copy-btn" id="copyBtn" aria-label="Copy email to clipboard">
+              <svg class="copy-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="tooltip-text" id="tooltip">Copy email</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="brand-footer" id="brandFooter">
+      <p>&copy; <span id="currentYear">2026</span> sivoravong.com</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
