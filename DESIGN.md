@@ -115,10 +115,11 @@ The palette is anchored in an earthy, prestigious botanical foundation balanced 
 
 The spatial composition is centered, singular, and immersive. It avoids complex grid fragmentation in favor of an uninterrupted calling-card presentation.
 
-- **Container Model:** Viewport-centered flexbox layout with vertical stacking (`min-height: 100vh`, padding `2rem 1.5rem`).
-- **Card Bounds:** Maximum width capped at `520px` to maintain comfortable reading line lengths (`~45-60ch`) and classical stationery proportions.
+- **Container Model:** Viewport-centered flexbox layout (`min-height: 100vh`, `min-height: 100dvh`, padding `2rem 1.5rem 4rem`).
+- **Card Bounds:** Maximum width capped at `520px` to maintain comfortable reading line lengths (`~45-60ch`) and classical stationery proportions, centered in the window.
 - **Card Internal Padding:** Generous internal padding of `3rem 2.5rem` (`48px 40px`) framing the text within a clean hairline border.
-- **Responsive Adaptations:** At small breakpoints (`<= 576px`), horizontal padding contracts to `1.5rem 1rem`, card padding scales to `2.25rem 1.5rem`, and heading scales to `1.85rem`.
+- **Footer Anchoring:** The legal/domain footer is pinned to the very bottom of the viewport (`position: absolute`, `bottom: max(1.25rem, env(safe-area-inset-bottom))`), allowing the card to own the vertical optical center undisturbed.
+- **Responsive Adaptations:** At small breakpoints (`<= 576px`), horizontal padding contracts to `1.5rem 1rem 3.5rem`, card padding scales to `2.25rem 1.5rem`, and heading scales to `1.85rem`.
 
 ## Elevation & Depth
 
