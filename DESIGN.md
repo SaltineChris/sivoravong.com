@@ -131,7 +131,6 @@ Depth is communicated through tonal stratification (deep green beneath warm ivor
 ### Shadow Vocabulary
 - **Card Grounding** (`box-shadow: 0 25px 50px -12px rgba(18, 33, 27, 0.35)`): Deep, diffuse ambient shadow that anchors the stationery card to the canvas.
 - **Pill Hover Float** (`box-shadow: 0 8px 20px rgba(34, 61, 51, 0.08)`): Subtle micro-lift when interacting with the contact pill container.
-- **Monogram Ambient Bloom** (`filter: blur(25px)`, background `#B8860B`, opacity `0.15` to `0.35` on hover): An ethereal radiant back-glow behind the monogram seal.
 
 ### Named Rules
 **The Monolithic Flatness Rule.** Surfaces rest flat and stable at rest. Depth is expressed through color values and hairline borders. Motion and elevation changes occur only in direct response to user interaction.
@@ -142,24 +141,23 @@ Depth is communicated through tonal stratification (deep green beneath warm ivor
 - **Interactive Containers:** Full pill radius (`50px` / `3.125rem`) for the contact container, providing a protective, capsule-like boundary around the email address.
 - **Action Buttons:** Perfectly circular action buttons (`width: 40px`, `height: 40px`, `border-radius: 50%`) centered inside the contact pill.
 - **Borders & Insets:**
-  - Outer card border: Solid hairline border in Burnished Gold (`1px solid #B8860B`).
-  - Inner letterpress border: Subtle dashed border (`1px dashed rgba(184, 134, 11, 0.25)`).
-- **Seal Geometry:** Concentric dual-ring circular SVG monogram featuring a solid outer ring (`stroke-width: 1.5`) and a dashed inner ring (`stroke-width: 0.75`, `stroke-dasharray: 3 2`).
+  - Card border: Solid hairline border in Burnished Gold (`1px solid #B8860B`). Clean unnested boundary.
+- **Seal Geometry:** Concentric dual-ring circular SVG monogram (`68px`) featuring a solid outer ring (`stroke-width: 1.2`) and a dashed inner ring (`stroke-width: 0.75`, `stroke-dasharray: 2.5 2`).
 
 ## Components
 
 ### Card (Stationery Cardstock)
 - **Character:** Tactile letterpress cardstock resting on a botanical canvas.
-- **Shape:** Soft-corner rectangle (`border-radius: 4px`) with an inner dashed inset frame.
+- **Shape:** Soft-corner rectangle (`border-radius: 4px`).
 - **Color:** Warm Archival Parchment (`#F5EEDC`) background with Burnished Gold outer border.
 - **Padding:** `48px 40px` (`3rem 2.5rem`).
-- **Motion:** Enters with a smooth slide-up fade (`translateY(40px)` to `0`, `1.2s cubic-bezier(0.16, 1, 0.3, 1)`).
+- **Motion:** Enters with a smooth slide-up fade (`fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s`).
 
 ### Monogram Seal
 - **Character:** Ceremonial embossed gold signet seal.
-- **Shape:** `90px` concentric circle vector containing serif "CCS" initials.
-- **Color:** Unified Burnished Gold strokes and typography with a soft luminous background aura.
-- **Hover Behavior:** Scales up gently (`scale(1.05)`), deepens gold drop-shadow (`drop-shadow(0 0 10px rgba(184, 134, 11, 0.65))`), and expands the ambient blur radius behind it (`scale(1.3)`, opacity `0.35`).
+- **Shape:** `68px` concentric circle vector containing serif "CCS" initials.
+- **Color:** Unified Burnished Gold strokes and typography resting serenely on Mulberry Green.
+- **Resting & Hover Behavior:** Dignified resting state (`opacity: 0.9`) transitioning subtly to full presence (`opacity: 1`) on hover without artificial glows or scaling.
 
 ### Contact Pill & Copy Button
 - **Character:** Discreet, high-craft utility badge.
@@ -174,7 +172,7 @@ Depth is communicated through tonal stratification (deep green beneath warm ivor
 ### Do:
 - **Do** preserve the strict 60-30-10 palette ratio with Mulberry Green as the dominant atmosphere.
 - **Do** use Lora for all future heading additions and keep Roboto for all functional UI and metadata.
-- **Do** maintain the subtle inner dashed border (`1px dashed rgba(184, 134, 11, 0.25)`) inside card containers.
+- **Do** keep card containers flat and unnested, relying on generous internal padding rather than decorative inner frames.
 - **Do** provide smooth, deliberate bezier easing curves (`cubic-bezier(0.16, 1, 0.3, 1)`) for all hover and active states.
 - **Do** ensure high-contrast Slate Charcoal (`#36454F`) text on all Warm Parchment backgrounds.
 
@@ -182,5 +180,6 @@ Depth is communicated through tonal stratification (deep green beneath warm ivor
 - **Don't** introduce high-gloss chrome, metallic gradients, or neon hues into the brand system.
 - **Don't** use cold pure white (`#FFFFFF`) or pure black (`#000000`) for surfaces or typography.
 - **Don't** add generic tech SaaS elements like floating 3D icons, purple/cyan gradients, or badge spam.
-- **Don't** use fast, aggressive, or spinning animations; keep motion dignified, organic, and blooming.
+- **Don't** use fast, aggressive, or spinning animations; keep motion dignified, organic, and serene.
+- **Don't** add artificial blur halos, backlight blooms, or neon glows behind the monogram seal.
 - **Don't** place Burnished Gold body text on Warm Parchment backgrounds due to low contrast.
