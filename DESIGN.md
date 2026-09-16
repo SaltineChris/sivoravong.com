@@ -9,23 +9,28 @@ colors:
   primary-dark: "#12211B"
   primary-light: "#2D5245"
   accent-hover: "#C9930F"
+  success: "#2E624C"
 typography:
   display:
-    fontFamily: "'Lora', serif"
-    fontSize: "2.25rem"
+    fontFamily: "'Lora', Georgia, serif"
+    fontSize: "clamp(1.85rem, 4vw + 1rem, 2.25rem)"
     fontWeight: 500
     lineHeight: 1.2
     letterSpacing: "-0.5px"
   body:
-    fontFamily: "'Roboto', sans-serif"
-    fontSize: "1.05rem"
+    fontFamily: "'Roboto', system-ui, sans-serif"
+    fontSize: "clamp(0.95rem, 0.5vw + 0.9rem, 1.05rem)"
     fontWeight: 300
     lineHeight: 1.6
   label:
-    fontFamily: "'Roboto', sans-serif"
+    fontFamily: "'Roboto', system-ui, sans-serif"
     fontSize: "0.8rem"
     fontWeight: 400
     letterSpacing: "0.8px"
+  caption:
+    fontFamily: "'Roboto', system-ui, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 400
 rounded:
   sm: "4px"
   pill: "50px"

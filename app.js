@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <svg class="copy-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
-      <span class="tooltip-text" id="tooltip">Copied!</span>
+      <span class="tooltip-text" id="tooltip" aria-live="polite">Copied!</span>
     `;
 
     copyBtn.addEventListener('click', async () => {
@@ -37,8 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Failed to copy email: ', err);
         // Direct feedback on failure
         tooltip.textContent = 'Failed to copy';
+        copyBtn.setAttribute('aria-label', 'Failed to copy email');
         setTimeout(() => {
           tooltip.textContent = originalTooltipText;
+          copyBtn.setAttribute('aria-label', 'Copy email to clipboard');
         }, 2000);
       }
     });
@@ -46,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showSuccessState() {
       copyBtn.classList.add('copied');
       copyBtn.innerHTML = checkIconHTML;
+      copyBtn.setAttribute('aria-label', 'Email address copied to clipboard');
       
       // Keep tooltip visible during the success state
       const activeTooltip = copyBtn.querySelector('#tooltip');
@@ -59,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         copyBtn.classList.remove('copied');
         copyBtn.innerHTML = originalIconHTML;
+        copyBtn.setAttribute('aria-label', 'Copy email to clipboard');
       }, 2200);
     }
 

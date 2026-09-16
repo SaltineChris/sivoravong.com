@@ -13,16 +13,40 @@
   --burnished-gold-light: rgba(184, 134, 11, 0.15);
   --parchment-border: rgba(184, 134, 11, 0.25);
   --shadow-color: rgba(18, 33, 27, 0.35);
-  
+  --color-success: #2e624c;
+  --shadow-tooltip: rgba(18, 33, 27, 0.25);
+
+  /* Fluid Typography Scale */
+  --font-size-display: clamp(1.85rem, 4vw + 1rem, 2.25rem);
+  --font-size-body: clamp(0.95rem, 0.5vw + 0.9rem, 1.05rem);
+  --font-size-label: 0.8rem;
+  --font-size-caption: 0.75rem;
+
   /* Fonts */
-  --font-display: 'Lora', serif;
-  --font-functional: 'Roboto', sans-serif;
+  --font-display: 'Lora', Georgia, serif;
+  --font-functional: 'Roboto', system-ui, sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Themed Browser Text Selection */
+::selection {
+  background-color: var(--burnished-gold);
+  color: var(--warm-parchment);
+}
+
+a {
+  text-underline-offset: 4px;
 }
 
 body {
@@ -122,20 +146,23 @@ body {
 .welcome-heading {
   font-family: var(--font-display);
   color: var(--mulberry-green);
-  font-size: 2.25rem;
+  font-size: var(--font-size-display);
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 1.25rem;
   letter-spacing: -0.5px;
+  text-wrap: balance;
 }
 
 .welcome-message {
   font-family: var(--font-functional);
   color: var(--charcoal-grey);
-  font-size: 1.05rem;
+  font-size: var(--font-size-body);
   line-height: 1.6;
   font-weight: 300;
   margin-bottom: 2.25rem;
+  max-width: 44ch;
+  text-wrap: pretty;
 }
 
 /* Contact CTA CSS */
@@ -168,7 +195,7 @@ body {
   color: var(--mulberry-green);
   font-weight: 500;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: var(--font-size-body);
   margin-right: 16px;
   transition: color 0.3s ease;
   letter-spacing: 0.2px;
@@ -202,6 +229,15 @@ body {
   outline: none;
 }
 
+/* Ensure 44x44px minimum tap target for accessibility */
+.copy-btn::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
 .copy-btn:focus-visible {
   outline: 2px solid var(--burnished-gold);
   outline-offset: 2px;
@@ -233,13 +269,13 @@ body {
   text-align: center;
   padding: 6px 12px;
   border-radius: 4px;
-  font-size: 0.75rem;
+  font-size: var(--font-size-caption);
   font-weight: 400;
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px var(--shadow-tooltip);
   font-family: var(--font-functional);
   z-index: 10;
 }
@@ -265,7 +301,7 @@ body {
 
 /* Active State for copy interaction (triggered by JavaScript) */
 .copy-btn.copied {
-  background-color: #2e624c; /* subtle success green accentuating the mulberry palette */
+  background-color: var(--color-success);
   color: var(--warm-parchment);
 }
 
@@ -277,7 +313,7 @@ body {
 .brand-footer {
   margin-top: 2.5rem;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: var(--font-size-label);
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: rgba(245, 238, 220, 0.4); /* warm parchment with lower opacity */
@@ -329,12 +365,10 @@ body {
   }
   
   .welcome-heading {
-    font-size: 1.85rem;
     margin-bottom: 1rem;
   }
   
   .welcome-message {
-    font-size: 0.95rem;
     margin-bottom: 1.75rem;
   }
   
@@ -345,7 +379,16 @@ body {
   }
   
   .email-link {
-    font-size: 0.95rem;
     margin-right: 8px;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
