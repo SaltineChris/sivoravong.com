@@ -128,9 +128,10 @@ The design philosophy favors monolithic flat planes paired with gentle luminous 
 
 Depth is communicated through tonal stratification (deep green beneath warm ivory cardstock) rather than dramatic physical suspension. Shadows are soft, diffuse, and serve to ground the parchment onto the forest floor.
 
-### Shadow Vocabulary
+### Shadow & Atmosphere Vocabulary
 - **Card Grounding** (`box-shadow: 0 25px 50px -12px rgba(18, 33, 27, 0.35)`): Deep, diffuse ambient shadow that anchors the stationery card to the canvas.
 - **Pill Hover Float** (`box-shadow: 0 8px 20px rgba(34, 61, 51, 0.08)`): Subtle micro-lift when interacting with the contact pill container.
+- **Atmospheric Botanical Canvas**: Subtle, slow-drifting gilded botanical micro-particles rendered on a fixed Canvas 2D background, providing organic depth with fluid cursor interaction and automatic reduced-motion pausing.
 
 ### Named Rules
 **The Monolithic Flatness Rule.** Surfaces rest flat and stable at rest. Depth is expressed through color values and hairline borders. Motion and elevation changes occur only in direct response to user interaction.
