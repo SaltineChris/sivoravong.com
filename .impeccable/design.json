@@ -187,7 +187,6 @@
       "Don't use cold pure white (#FFFFFF) or pure black (#000000) for surfaces or typography.",
       "Don't add generic tech SaaS elements like floating 3D icons, purple/cyan gradients, or badge spam.",
       "Don't use fast, aggressive, or spinning animations; keep motion dignified, organic, and serene.",
-      "Don't add artificial blur halos, backlight blooms, or neon glows behind the monogram seal.",
       "Don't place Burnished Gold body text on Warm Parchment backgrounds due to low contrast."
     ]
   }

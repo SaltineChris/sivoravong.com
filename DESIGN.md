@@ -83,16 +83,14 @@ The palette is anchored in an earthy, prestigious botanical foundation balanced 
 - **Deep Botanical Anchor (Mulberry Green)** (`#223D33`): The dominant brand color establishing visual weight and deep atmospheric background presence. Extended with a radial gradient from luminous foliage (`#2D5245`) down into deep forest shadow (`#12211B`).
 
 ### Secondary
-- **Burnished Gold Accent** (`#B8860B`): The solitary metallic accent used for the monogram emblem, key interactive highlights, and delicate hairline boundaries. Transitions to warm amber gold (`#C9930F`) on interactive focus.
+- **Burnished Gold Accent** (`#B8860B`): The solitary metallic accent used for key interactive highlights, the card perimeter boundary, and copy trigger accents. Transitions to warm amber gold (`#C9930F`) on interactive focus.
 
 ### Neutral
 - **Warm Archival Parchment** (`#F5EEDC`): The physical base neutral for the calling card, offering warm tactile relief and high legibility without cold artificial brightness.
 - **Slate Charcoal** (`#36454F`): The dark neutral used for primary text and secondary informational copy, delivering crisp contrast without the harshness of pure black.
 
 ### Named Rules
-**The 60-30-10 Distribution Rule.** Color space strictly follows a 60% Mulberry Green (dominant atmosphere), 30% Warm Parchment (card surface area), and 10% Burnished Gold (focal accents, lines, and monogram) balance.
-
-**The Monogram Rule.** When placing the CCS monogram emblem upon the Mulberry Green canvas, use a unified Burnished Gold for all letterforms and rings to preserve a monolithic, bespoke seal. Never introduce secondary hues to the mark itself.
+**The 60-30-10 Distribution Rule.** Color space strictly follows a 60% Mulberry Green (dominant atmosphere), 30% Warm Parchment (card surface area), and 10% Burnished Gold (focal accents and hairline boundaries) balance.
 
 **The Slate Contrast Rule.** All textual copy on Warm Parchment must use Slate Charcoal (`#36454F`). Burnished Gold text is forbidden on light parchment to ensure strict AA accessibility.
 
@@ -102,7 +100,7 @@ The palette is anchored in an earthy, prestigious botanical foundation balanced 
 **Body Font:** Roboto (Sans-serif) with system-ui, sans-serif fallback  
 **Label/Mono Font:** Roboto (Sans-serif)
 
-**Character:** A dignified dialogue between authoritative classical literature and functional modern legibility. Lora delivers aristocratic elegance to headings and seals, while Roboto supplies clear, unobtrusive clarity for communications.
+**Character:** A dignified dialogue between authoritative classical literature and functional modern legibility. Lora delivers aristocratic elegance to display headings, while Roboto supplies clear, unobtrusive clarity for communications.
 
 ### Hierarchy
 - **Display / Heading 1** (Medium 500, `2.25rem` / `36px`, line-height `1.2`, letter-spacing `-0.5px`): Main welcome greeting and section titles.
@@ -111,7 +109,7 @@ The palette is anchored in an earthy, prestigious botanical foundation balanced 
 - **Label / Footer** (Regular 400, `0.8rem` / `12.8px`, letter-spacing `0.8px`, uppercase): Legal and domain identity metadata, rendered in warm parchment at muted opacity (`rgba(245, 238, 220, 0.4)`).
 
 ### Named Rules
-**The Strict Role Division Rule.** Lora is strictly reserved for display headings and monogram typography. Roboto is strictly reserved for body text, interactive controls, and metadata. Roles must never be interchanged.
+**The Strict Role Division Rule.** Lora is strictly reserved for display headings. Roboto is strictly reserved for body text, interactive controls, and metadata. Roles must never be interchanged.
 
 ## Layout
 
@@ -119,8 +117,8 @@ The spatial composition is centered, singular, and immersive. It avoids complex 
 
 - **Container Model:** Viewport-centered flexbox layout with vertical stacking (`min-height: 100vh`, padding `2rem 1.5rem`).
 - **Card Bounds:** Maximum width capped at `520px` to maintain comfortable reading line lengths (`~45-60ch`) and classical stationery proportions.
-- **Inner Letterpress Margin:** A recessed margin (`12px`) with an internal padding of `3rem 2.5rem` (`48px 40px`) framing the text within a fine dashed inset border.
-- **Responsive Adaptations:** At small breakpoints (`<= 576px`), horizontal padding contracts to `1.5rem 1rem`, card inner margins reduce to `8px`, card padding scales to `2.25rem 1.5rem`, and heading scales to `1.85rem`.
+- **Card Internal Padding:** Generous internal padding of `3rem 2.5rem` (`48px 40px`) framing the text within a clean hairline border.
+- **Responsive Adaptations:** At small breakpoints (`<= 576px`), horizontal padding contracts to `1.5rem 1rem`, card padding scales to `2.25rem 1.5rem`, and heading scales to `1.85rem`.
 
 ## Elevation & Depth
 
@@ -143,7 +141,6 @@ Depth is communicated through tonal stratification (deep green beneath warm ivor
 - **Action Buttons:** Perfectly circular action buttons (`width: 40px`, `height: 40px`, `border-radius: 50%`) centered inside the contact pill.
 - **Borders & Insets:**
   - Card border: Solid hairline border in Burnished Gold (`1px solid #B8860B`). Clean unnested boundary.
-- **Seal Geometry:** Concentric dual-ring circular SVG monogram (`68px`) featuring a solid outer ring (`stroke-width: 1.2`) and a dashed inner ring (`stroke-width: 0.75`, `stroke-dasharray: 2.5 2`).
 
 ## Components
 
@@ -152,13 +149,7 @@ Depth is communicated through tonal stratification (deep green beneath warm ivor
 - **Shape:** Soft-corner rectangle (`border-radius: 4px`).
 - **Color:** Warm Archival Parchment (`#F5EEDC`) background with Burnished Gold outer border.
 - **Padding:** `48px 40px` (`3rem 2.5rem`).
-- **Motion:** Enters with a smooth slide-up fade (`fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s`).
-
-### Monogram Seal
-- **Character:** Ceremonial embossed gold signet seal.
-- **Shape:** `68px` concentric circle vector containing serif "CCS" initials.
-- **Color:** Unified Burnished Gold strokes and typography resting serenely on Mulberry Green.
-- **Resting & Hover Behavior:** Dignified resting state (`opacity: 0.9`) transitioning subtly to full presence (`opacity: 1`) on hover without artificial glows or scaling.
+- **Motion:** Enters with a smooth slide-up fade (`fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1)`).
 
 ### Contact Pill & Copy Button
 - **Character:** Discreet, high-craft utility badge.
@@ -182,5 +173,4 @@ Depth is communicated through tonal stratification (deep green beneath warm ivor
 - **Don't** use cold pure white (`#FFFFFF`) or pure black (`#000000`) for surfaces or typography.
 - **Don't** add generic tech SaaS elements like floating 3D icons, purple/cyan gradients, or badge spam.
 - **Don't** use fast, aggressive, or spinning animations; keep motion dignified, organic, and serene.
-- **Don't** add artificial blur halos, backlight blooms, or neon glows behind the monogram seal.
 - **Don't** place Burnished Gold body text on Warm Parchment backgrounds due to low contrast.
